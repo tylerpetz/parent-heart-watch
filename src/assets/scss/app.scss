@@ -1,0 +1,346 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-close-button;
+// @include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+// @include foundation-dropdown-menu;
+// @include foundation-flex-video;
+// @include foundation-label;
+// @include foundation-media-object;
+// @include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+// @include foundation-slider;
+// @include foundation-sticky;
+// @include foundation-reveal;
+// @include foundation-switch;
+// @include foundation-table;
+// @include foundation-tabs;
+// @include foundation-thumbnail;
+// @include foundation-title-bar;
+// @include foundation-tooltip;
+// @include foundation-top-bar;
+// @include foundation-visibility-classes;
+// @include foundation-float-classes;
+// @include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+.red-bg {
+	background-color: $red;
+	&:hover {
+		background-color: darken($red, 10%);
+	}
+}
+
+.blue-bg {
+	background-color: $blue;
+	&:hover {
+		background-color: darken($blue, 10%);
+	}
+}
+
+.pop-in {
+	@include mui-animation(slide(in, up, 35px), fade(0,1), zoom(0.95, 1))
+	animation-duration: .3s;
+}
+
+.pop-out {
+	@include mui-animation(slide(out, down, 35px), fade(1,0), zoom(1, .95))
+	animation-duration: .3s;
+}
+
+header {
+	width: 100%;
+	background: white;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,.25);
+	display: block;
+	text-align: center;
+
+	@include tablet {
+		box-shadow: none;
+	}
+
+	.top {
+		width: 100%;
+		max-width: 1290px;
+		margin: 0 auto;
+		position: relative;
+		padding-top: 36px;
+
+		@include desktop {
+			max-width: 900px;
+		}
+
+		@include tablet {
+			height: 70px;
+			padding: 0
+		}
+
+		#search {
+			float: left;
+			position: absolute;
+			top: 104px;
+			left: 0;
+			width: 235px;
+			display: inline-block;
+			z-index: 2;
+
+			@include desktop {
+				top: 68px;
+				width: 190px;
+			}
+
+			@include tablet {
+				display: none;
+			}
+
+			input {
+				border-radius: 5px;
+				box-shadow:inset 2px 2px 15px 0 rgba(0,0,0,.15);
+				border: 1px solid #B2B2B2;
+			}
+		}
+
+		#logo {
+			position: relative;
+			text-align: center;
+
+			img {
+				margin: 0 auto;
+
+				@include desktop {
+					max-width: 390px;
+				}
+
+				@include tablet {
+					max-width: 310px;
+				}
+			}
+
+			@include tablet {
+				position: absolute;
+				top: 7px;
+				left: 10px;
+			}
+		}
+	}	
+
+	nav {
+		display: block;
+		margin: 0 auto;
+
+
+		@include tablet {
+			background: #efefef;
+			padding-top: 10px;
+			visibility: hidden;
+			position: absolute;
+			top: 70px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			pointer-events: none;
+
+			&.open {
+				pointer-events: auto;
+				visibility: visible;
+			}
+		}
+
+		ul {
+			margin: 0;
+
+			li {
+				display: inline-block;
+				float: none;
+
+				@include tablet {
+					display: block;
+					width: 100%;
+				}
+
+				&.active {
+					a {
+						color: $red;
+					}
+				}
+
+				a:not(.button) {
+					font-weight: 600;
+					text-transform: uppercase;
+					color: #000;
+					font-size: 18px;
+					height: 30px;
+					line-height: 30px;
+					position: relative;
+					padding: 0 18px 0 12px;
+					letter-spacing: 1.5px;
+
+					@include desktop {
+						font-size: 14px;
+						letter-spacing: 1px;
+						height: 24px;
+						line-height: 24px;
+						padding: 0 9px 0 3px;
+					}
+
+					@include tablet {
+						padding: 6px 0;
+						display: block;
+						height: auto;
+						font-size: 18px;
+					}
+
+					&:hover {
+						color: $red;
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						width: 1px;
+						height: 100%;
+						right: 0;
+						top: 0;
+						background: #9b9a9a;
+
+						@include tablet {
+							display: none;
+						}
+					}
+
+					&.last {
+
+						@include tablet {
+							margin-bottom: 10px;
+						}
+
+						&::after {
+							display: none;
+						}
+					}
+				}
+
+				a.button {
+					font-size: 26px;
+					font-weight: 900;
+					text-transform: uppercase;
+					padding: 0.75em .5em;
+					margin-right: 4px;
+					margin-bottom: 22px;
+
+					@include desktop {
+						font-size: 17px;
+					}
+
+					@include tablet {
+						display: inline-block;
+						width: 100%;
+						margin: 0 auto;
+						max-width: 320px;
+						float: none;
+					}
+				}
+			}
+		}
+	}
+
+	.menu-icon {
+		position: fixed;
+		z-index: 4;
+		top: 12px;
+		right: 12px;
+		height: 44px;
+		width: 44px;
+		overflow: hidden;
+		color: transparent;
+		white-space: nowrap;
+		text-indent: 100%;
+		display: none;
+
+		@include tablet {
+			display: block;
+		}
+
+		span {
+			position: absolute;
+			height: 4px;
+			width: 36px;
+			background: $blue;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			-webkit-transition: background 0.3s;
+			transition: background 0.3s;
+
+			&::before, &::after  {
+				position: inherit;
+				height: inherit;
+				width: inherit;
+				background: $blue;
+				content: "";
+				top: 0;
+				left: 0;
+				-webkit-transition: background 0.3s, -webkit-transform 0.3s;
+				transition: background 0.3s, -webkit-transform 0.3s;
+				transition: background 0.3s, transform 0.3s;
+				transition: background 0.3s, transform 0.3s, -webkit-transform 0.3s;
+			}
+
+			&::before {
+				transform: translateY(-12px);
+			}
+
+			&::after {
+				transform: translateY(12px);
+			}
+
+			&:hover span {
+				background: white;
+
+				&::before, &::after {
+					background: white;
+				}
+			}
+		}
+
+		&.menu-opened span {
+			background: transparent;
+
+			&::before {
+				transform: rotate(-45deg);
+				background: $red;
+			}
+
+			&::after {
+				background: $red;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
