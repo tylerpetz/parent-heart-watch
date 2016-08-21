@@ -13,7 +13,8 @@ $(document).ready(function() {
   	touchDrag: false,
   	mouseDrag: false,
   	pagination: false,
-  	navigation: true
+  	navigation: true,
+  	navigationText:	["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
   });
 });
 
