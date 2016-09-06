@@ -14,5 +14,10 @@
 	{{> footer}}
 
 	<script src="{{root}}assets/js/app.js"></script>
+	{{#ifpage 'index'}}
+	<script>
+	$('#thanks').foundation('open');
+	</script>
+	{{/ifpage}}
 </body>
 </html>
