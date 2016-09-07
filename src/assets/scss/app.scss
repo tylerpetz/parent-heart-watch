@@ -49,6 +49,12 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+body {
+	@include tablet {
+		padding-top: 70px;
+	}
+}
+
 .red-bg {
 	background-color: $red;
 	&:hover {
@@ -77,11 +83,25 @@ section {
 	padding: 40px 15px 64px;
 	position: relative;
 
+	@include tablet {
+		padding: 20px 15px 30px;
+	}
+
 	h1 {
 		font-size: 56px;
 		color: #62b136;
 		font-weight: bold;
 		text-align: center;
+
+		@include tablet {
+			font-size: 36px!important;
+			width: auto!important;
+			line-height: 1.4!important;
+		}
+
+		@include phone {
+			font-size: 26px!important;
+		}
 	}
 
 	&.small {
@@ -93,6 +113,15 @@ section {
 			margin-bottom: 50px;
 			line-height: 1;
 			color: #000000;
+
+			@include tablet {
+				font-size: 24px;
+				margin-bottom: 25px;
+			}
+
+			@include phone {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -109,6 +138,51 @@ section {
 		&.large {
 			font-size: 56px;
 			font-weight: bold;
+
+			@include tablet {
+				font-size: 32px!important;
+			}
+
+			@include phone {
+				font-size: 20px!important;
+			}
+		}
+	}
+
+	h3 {
+		@include tablet {
+			font-size: 22px!important;
+			line-height: 25px;
+			width: auto!important;
+		}
+
+		@include phone {
+			font-size: 19px!important;
+			line-height: 25px;
+		}
+	}
+
+	h4 {
+		@include tablet {
+			font-size: 19px!important;
+			line-height: 27px;
+		}
+
+		@include phone {
+			font-size: 19px!important;
+			line-height: 25px;
+		}
+	}
+
+	h5 {
+		@include tablet {
+			font-size: 19px!important;
+			line-height: 27px!important;
+		}
+
+		@include phone {
+			font-size: 19px!important;
+			line-height: 25px!important;
 		}
 	}
 
@@ -116,6 +190,31 @@ section {
 		font-size: 23px;
 		line-height: 33px;
 		font-family: 'Caslon', serif;
+
+		@include tablet {
+			font-size: 18px!important;
+			line-height: 26px;
+			margin-bottom: 22px!important;
+		}
+
+		@include phone {
+			font-size: 18px!important;
+			line-height: 24px;
+			margin-bottom: 17px!important;
+		}
+	}
+}
+
+
+hr {
+	@include tablet {
+		max-width: 70%!important;
+		margin: 45px auto 0px!important;
+	}
+
+	@include phone {
+		max-width: 100%!important;
+		margin: 25px auto 0px!important;
 	}
 }
 
@@ -127,7 +226,12 @@ header {
 	text-align: center;
 
 	@include tablet {
-		box-shadow: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 99;
 	}
 
 	.top {
@@ -504,6 +608,21 @@ header {
 }
 
 #slider {
+
+	.owl-item .background, .owl-item .background .container {
+		@include desktop {
+			height: 400px!important;
+		}
+
+		@include tablet {
+			height: 300px!important;
+		}
+
+		@include phone {
+			height: 240px!important;
+		}
+	}
+
 	&.hero {
 		.owl-item .container .inner {
 			h1 {
@@ -536,6 +655,20 @@ header {
 					font-size: 122px;
 					font-weight: bold;
 
+					@include desktop {
+						font-size: 72px;
+						line-height: 1;
+					}
+
+					@include tablet {
+						font-size: 48px;
+						width: auto;
+					}
+
+					@include phone {
+						font-size: 28px;
+					}
+
 					span {
 						display: block;
 						font-size: 58px;
@@ -546,6 +679,17 @@ header {
 						position: relative;
 						margin: 15px auto;
 
+						@include tablet {
+							font-size: 48px;
+							line-height: 1;
+							width: auto;
+							margin: 5px auto;
+						}
+
+						@include phone {
+							font-size: 28px;
+						}
+
 						&:before {
 							content: '';
 							position: absolute;
@@ -554,6 +698,10 @@ header {
 							width: 42px;
 							height: 4px;
 							background: #ed5851;
+
+							@include tablet {
+								display: none;
+							}
 						}	
 
 						&:after {
@@ -564,12 +712,27 @@ header {
 							width: 42px;
 							height: 4px;
 							background: #ed5851;
+
+							@include tablet {
+								display: none;
+							}
 						}
 
 						&.no-marks {
 							font-size: 84px;
 							color: #004e5e;
 							font-weight: 600;
+
+							@include tablet {
+								font-size: 48px;
+								line-height: 1;
+								width: auto;
+								margin: 5px auto;
+							}
+
+							@include phone {
+								font-size: 28px;
+							}
 
 							&:before, &:after {
 								display: none;
@@ -654,6 +817,19 @@ header {
 					font-weight: bold;
 					width: 100%;
 
+					@include desktop {
+						font-size: 72px;
+						line-height: 1;
+					}
+
+					@include tablet {
+						font-size: 48px;
+					}
+
+					@include phone {
+						font-size: 28px;
+					}
+
 					em {
 						display: block;
 						line-height: 1.1;
@@ -670,6 +846,22 @@ header {
 						margin: 0 auto;
 						color: #f8c149;
 
+
+						@include desktop {
+							font-size: 48px;
+							line-height: 1.5;
+							width: 500px;
+						}
+
+						@include tablet {
+							font-size: 36px;
+							width: 100%;
+						}
+
+						@include phone {
+							font-size: 20px;
+						}
+
 						&:before {
 							content: '';
 							position: absolute;
@@ -678,6 +870,16 @@ header {
 							width: 80px;
 							height: 6px;
 							background: #f8c149;
+
+							@include desktop {
+								top: 50%;
+								width: 45px;
+								height: 4px;
+							}
+
+							@include tablet {
+								display: none;
+							}
 						}	
 
 						&:after {
@@ -688,6 +890,16 @@ header {
 							width: 80px;
 							height: 6px;
 							background: #f8c149;
+
+							@include desktop {
+								top: 50%;
+								width: 45px;
+								height: 4px;
+							}
+
+							@include tablet {
+								display: none;
+							}
 						}
 					}
 				}  
@@ -739,6 +951,21 @@ header {
 					width: 890px;
 					line-height: 100px;
 
+					@include desktop {
+						font-size: 72px;
+						line-height: 1.4;
+					}
+
+					@include tablet {
+						font-size: 48px;
+						line-height: 1.2;
+						width: auto;
+					}
+
+					@include phone {
+						font-size: 28px;
+					}
+
 					span {
 						display: block;
 						font-weight: normal;
@@ -748,6 +975,20 @@ header {
 						line-height: 70px;
 						font-size: 64px;
 						color: #f8c149;
+
+						@include desktop {
+							font-size: 50px;
+							line-height: 1;
+						}
+
+						@include tablet {
+							font-size: 36px;
+							line-height: 1.4;
+						}
+
+						@include phone {
+							font-size: 24px;
+						}
 					}
 				}  
 
@@ -804,6 +1045,19 @@ header {
 					width: 100%;
 					line-height: 1;
 
+					@include desktop {
+						font-size: 72px;
+						line-height: 1;
+					}
+
+					@include tablet {
+						font-size: 48px;
+					}
+
+					@include phone {
+						font-size: 34px;
+					}
+
 					em {
 						display: block;
 						font-size: 72px;
@@ -811,6 +1065,19 @@ header {
 						text-shadow: 0 0 25px rgba(0,0,0,.65);
 						font-weight: 600;
 						color: white;
+
+						@include desktop {
+							font-size: 72px;
+							line-height: 1;
+						}
+
+						@include tablet {
+							font-size: 48px;
+						}
+
+						@include phone {
+							font-size: 34px;
+						}
 					}
 
 					span {
@@ -911,6 +1178,18 @@ header {
 					text-transform: uppercase;
 					width: 220px;
 					margin: 0 auto 50px;
+
+					@include tablet {
+						font-size: 20px;
+						width: auto;
+						line-height: 1;
+						padding: 15px;
+						margin-top: 15px!important;
+					}
+
+					@include phone {
+						font-size: 18px;
+					}
 
 					&:hover {
 						background: darken(#ed5851, 10%);
@@ -1117,6 +1396,10 @@ header {
 	position: relative;
 	margin-bottom: 30px;
 
+	@include tablet {
+		margin-bottom: 15px;
+	}
+
 	&.no-border {
 		&:after {
 			display: none;
@@ -1132,6 +1415,10 @@ header {
 		top: 50%;
 		left: 0;
 		right: 0;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	h4 {
@@ -1150,10 +1437,32 @@ header {
 		margin: 0;
 		text-align:center;
 
+		@include tablet {
+			width: auto;
+			height: 45px;
+			line-height: 45px;
+			padding: 0 15px;
+			color: #922280;
+			background-color: transparent!important;
+			border-bottom: 3px solid #922280;
+			width: 100%!important;
+		}
+
+		@include phone {
+			font-size: 18px!important;
+			line-height: 1.4;
+			white-space: normal;
+			border-bottom: none;
+		}
+
 		span {
 			position: relative;
 			z-index: 2;
 			left: -3%;
+
+			@include tablet {
+				left: 0;
+			}
 		}
 
 		&:before {
@@ -1165,6 +1474,10 @@ header {
 			position: absolute;
 			right: 100%;
 			top: 0;
+
+			@include tablet {
+				display: none;
+			}
 		}
 
 		&:after {
@@ -1176,6 +1489,10 @@ header {
 			position: absolute;
 			left: 100%;
 			top: 0;
+
+			@include tablet {
+				display: none;
+			}
 		}
 	}
 	
@@ -1194,10 +1511,31 @@ header {
 		z-index: 2;
 		margin: 0;
 
+		@include tablet {
+			width: auto;
+			height: 45px;
+			line-height: 45px;
+			padding: 0 15px;
+			color: #922280;
+			background-color: transparent;
+			border-bottom: 3px solid #922280;
+		}
+
+		@include phone {
+			font-size: 18px!important;
+			line-height: 1.4;
+			white-space: normal;
+			border-bottom: none;
+		}
+
 		span {
 			position: relative;
 			z-index: 2;
 			left: -3%;
+
+			@include tablet {
+				left: 0;
+			}
 		}
 
 		&:before {
@@ -1209,6 +1547,10 @@ header {
 			position: absolute;
 			right: 100%;
 			top: 0;
+
+			@include tablet {
+				display: none;
+			}
 		}
 
 		&:after {
@@ -1220,6 +1562,10 @@ header {
 			position: absolute;
 			left: 100%;
 			top: 0;
+
+			@include tablet {
+				display: none;
+			}
 		}
 	}
 }
@@ -1234,9 +1580,10 @@ header {
 	background-repeat: no-repeat;
 	margin-top: 60px;
 
-	
-	&:before {
-
+	@include tablet {
+		margin-top: 30px;
+		height: 26px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -1246,12 +1593,24 @@ header {
 
 	.row {
 		max-width: 1200px;
+
+		@include tablet {
+			max-width: 800px;
+		}
+
+		@include phone {
+			max-width: 400px;
+		}
 	}
 
 	.container {
 		display: table;
 		width: 100%;
 		text-align: center;
+
+		@include tablet {
+			padding: 15px 0;
+		}
 
 		span {
 			display: table-cell;
@@ -1261,7 +1620,17 @@ header {
 		}
 
 		img {
-			
+			@include phone {
+				max-width: 150px;
+			}
+		}
+	}
+
+	.column {
+		@include phone {
+			width: 100%;
+			display: block;
+			clear: both;
 		}
 	}
 }
@@ -1293,6 +1662,16 @@ header {
 			letter-spacing: .5px;
 			position: relative;
 
+			@include tablet {
+				display: block;
+				float: none;
+				margin: 0 auto 15px;
+				width: 170px;
+				height: 46px;
+				line-height: 46px;
+				font-size: 20px;
+			}
+
 			&:after {
 				border-left: 45px solid #af2c23;
 				border-top: 30px solid transparent;
@@ -1302,6 +1681,10 @@ header {
 				position: absolute;
 				left: 100%;
 				top: 0;
+
+				@include tablet {
+					display: none;
+				}
 			}
 		}
 
@@ -1316,11 +1699,21 @@ header {
 				right: 0;
 				margin: 0;
 				height: 30px;
+
+				@include tablet {
+					height: 17px;
+				}
+			}
+
+			@include tablet {
+				width: 80%;
+				float: none;
+				display: block;
+				margin: 0 auto;
 			}
 		}
 
 		ul {
-			
 			margin: 0;
 			border-top: 1px solid #d6d6d6;
 
@@ -1332,6 +1725,17 @@ header {
 				font-size: 27px;
 				color: #000000;
 				padding: 0 25px;
+
+				@include desktop {
+					padding: 0 5px;
+					font-size: 22px;
+				}
+
+				@include tablet {
+					height: 45px;
+					line-height: 45px;
+					padding: 0 20px;
+				}
 			}
 		}
 	}
@@ -1523,6 +1927,14 @@ form {
 	display: block;
 	margin: 50px 0;
 
+	@include tablet {
+		margin: 25px 0;
+	}
+
+	@include phone {
+		margin: 17px 0;
+	}
+
 	.point-right {
 		color: white;
 		font-weight: bold;
@@ -1535,6 +1947,27 @@ form {
 		line-height: 60px;
 		height: 60px;
 		padding: 0 17px;
+
+		@include tablet {
+			font-size: 22px;
+			height: 46px;
+			line-height: 46px;
+		}
+
+		@include phone {
+			font-size: 18px;
+			height: 38px;
+			line-height: 38px;
+		}
+
+		@include tiny {
+			font-size: 17px;
+			line-height: 28px;
+			height: auto;
+			padding: 5px 17px;
+			width: 100%;
+			text-align: center;
+		}
 
 		span {
 			position: absolute;
@@ -1557,13 +1990,29 @@ form {
 			position: absolute;
 			left: 100%;
 			top: 0;
+
+			@include tablet {
+				border-top-width: 23px;
+				border-bottom-width: 23px;
+				border-left-width: 34px;
+			}
+
+			@include phone {
+				border-top-width: 19px;
+				border-bottom-width: 19px;
+				border-left-width: 28px;
+			}
+
+			@include tiny {
+				display: none;
+			}
 		}
 
 		&.green {
 			background: #62ab3c;
 
 			&::after {
-				border-left: 45px solid #62ab3c;
+				border-left-color: #62ab3c;
 			}
 		}
 
@@ -1571,7 +2020,7 @@ form {
 			background: #004e5e;
 
 			&::after {
-				border-left: 45px solid #004e5e;
+				border-left-color: #004e5e;
 			}
 		}
 
@@ -1579,7 +2028,7 @@ form {
 			background: #5dbdce;
 
 			&::after {
-				border-left: 45px solid #5dbdce;
+				border-left-color: #5dbdce;
 			}
 		}
 
@@ -1587,7 +2036,7 @@ form {
 			background: #f8c149;
 
 			&::after {
-				border-left: 45px solid #f8c149;
+				border-left-color: #f8c149;
 			}
 		}
 
@@ -1595,7 +2044,7 @@ form {
 			background: #f28944;
 
 			&::after {
-				border-left: 45px solid #f28944;
+				border-left-color: #f28944;
 			}
 		}
 
@@ -1603,7 +2052,7 @@ form {
 			background: #922280;
 
 			&::after {
-				border-left: 45px solid #922280;
+				border-left-color: #922280;
 			}
 		}
 
@@ -1611,7 +2060,7 @@ form {
 			background: #af2c23;
 
 			&::after {
-				border-left: 45px solid #af2c23;
+				border-left-color: #af2c23;
 			}
 		}
 	}
@@ -1753,7 +2202,7 @@ form {
 	padding-bottom: 0;
 
 	.row {
-		width: 1100px;
+		max-width: 1100px;
 	}
 
 	h1 {
@@ -1792,6 +2241,14 @@ form {
 			filter: grayscale(100%);
 			transition: all 400ms ease;
 
+			@include tablet {
+				height: 180px;
+			}
+
+			@include tiny {
+				height: 130px;
+			}
+
 			a {
 				display: block;
 				position: absolute;
@@ -1824,6 +2281,10 @@ form {
 				font-weight: bold;
 				text-shadow: 0 0 15px rgba(0,0,0,.95);
 				transition: all 400ms ease;
+
+				@include tablet {
+					font-size: 22px!important;
+				}
 
 				span {
 					display: block;
@@ -1901,6 +2362,23 @@ form {
 		margin-top: 15px;
 		padding-left: 45px;
 		padding-bottom: 65px;
+
+		@include tablet {
+			max-width: 350px;
+		}
+
+		@include phone {
+			font-size: 26px;
+			display: block;
+			max-width: 320px;
+			margin: 0 auto 30px;
+			float: none;
+			padding: 0;
+		}
+
+		@include tiny {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -1933,6 +2411,10 @@ form {
 			line-height: 37px;
 			text-align: center;
 			margin-bottom: 25px;
+
+			@include tablet {
+				margin-top: 20px;
+			}
 		}
 	}
 
@@ -1954,6 +2436,23 @@ form {
 		margin-top: 15px;
 		padding-left: 45px;
 		padding-bottom: 65px;
+
+		@include tablet {
+			max-width: 350px;
+		}
+
+		@include phone {
+			font-size: 26px;
+			display: block;
+			max-width: 320px;
+			margin: 0 auto 30px;
+			float: none;
+			padding: 0;
+		}
+
+		@include tiny {
+			max-width: 100%;
+		}
 	}
 
 	.stats {
@@ -1967,6 +2466,16 @@ form {
 			background-position: top center;
 			position: relative;
 
+			@include tablet {
+				height: 200px;
+			}
+
+			@include phone {
+				height: 200px;
+				width: 220px;
+				margin: 0 auto 40px;
+			}
+
 			.container {
 				display: table-cell;
 				vertical-align: middle;
@@ -1976,6 +2485,11 @@ form {
 				font-family: 'Caslon', serif;
 				text-shadow: 0 0 16px #000000;
 
+				@include tablet {
+					font-size: 18px;
+					line-height: 27px;
+				}
+
 				span {
 					display: block;
 					font-size: 45px;
@@ -1983,6 +2497,11 @@ form {
 					font-weight: bold;
 					font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 					text-shadow: 0 0 19px #040404;
+
+					@include tablet {
+						font-size: 24px;
+						line-height: 25px;
+					}
 				}
 			}
 
@@ -1996,6 +2515,10 @@ form {
 				top: 100%;
 				left: 0;
 				right: 0;
+
+				@include tablet {
+					height: 17px;
+				}
 			}
 		}
 	}
@@ -2029,6 +2552,12 @@ form {
 		padding-bottom: 50px;
 		padding-top:  60px;
 
+		@include tablet {
+			border: none;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
 		.fancy-title {
 			position: absolute;
 			top: -33px;
@@ -2037,15 +2566,23 @@ form {
 
 		h4 {
 			background: #922280;
-			width: 950px;
+			width: 850px;
 			font-size: 32px;
 
-			&:before{
+			@include tablet {
+				width: 90%;
+			}
+
+			&:before {
 				border-right-color: #922280;
 			}
 
 			&:after {
 				border-left-color: #922280;
+			}
+
+			span {
+				left: 0;
 			}
 		}
 
@@ -2058,8 +2595,19 @@ form {
 			padding-right: 80px;
 			list-style-type: dot;
 
+			@include tablet {
+				padding-left: 30px;
+				padding-right: 30px;
+				padding: 0;
+			}
+
 			li {
 				font-size: 30px;
+
+				@include tablet {
+					font-size: 20px;
+					padding: 0;
+				}
 			}
 		}
 	}
@@ -2788,6 +3336,16 @@ form {
 		max-width: 1100px;
 		margin: 0 auto 30px; 
 
+		@include tablet {
+			font-size: 18px!important;
+			line-height: 26px!important;
+		}
+
+		@include phone {
+			font-size: 18px!important;
+			line-height: 24px!important;
+		}
+
 		&.heading {
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			font-size: 35px;
@@ -2796,11 +3354,27 @@ form {
 			font-weight: bold;
 			margin-bottom: 45px;
 
+			@include tablet {
+				font-size: 25px;
+			}
+
+			@include phone {
+				font-size: 16px;
+			}
+
 			strong {
 				font-size: 42px;
 				color: #62b136;
 				display:block;
 				margin-bottom: 10px;
+
+				@include tablet {
+					font-size: 27px;
+				}
+
+				@include phone {
+					font-size: 22px;
+				}
 			}
 		}
 	}
@@ -2821,12 +3395,22 @@ form {
 			margin-bottom: 40px;
 			font-weight: 600;
 
+			@include tablet {
+				font-size: 18px;
+			}
+
 			span {
 				color: #6c6d6c;
 				font-size: 18px;
 				margin-left: 10px;
 				position: relative;
 				top: -4px;
+
+				@include tablet {
+					font-size: 12px;
+					margin-left: 5px;
+					top: -2px;
+				}
 			}
 		}
 	}
@@ -2840,6 +3424,14 @@ form {
 			line-height: 1;
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			font-weight: bold;
+
+			@include tablet {
+				font-size: 70px;
+			}
+
+			@include tiny {
+				font-size: 44px;
+			}
 		}
 
 		p {
@@ -2848,6 +3440,17 @@ form {
 			color: #5dbdce;
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			font-weight: bold;
+			margin-bottom: 0!important;
+
+			@include tablet {
+				font-size: 33px!important;
+				line-height: 34px!important;
+			}
+
+			@include phone {
+				font-size: 17px!important;
+				line-height: 21px!important;
+			}
 		}
 
 		.text-left {
@@ -2860,6 +3463,10 @@ form {
 		max-width: 960px;	
 		margin: 50px auto;
 		border-bottom: 1px solid #bababe;
+
+		@include tablet {
+			margin-bottom: 30px!important;
+		}
 	}
 
 	.standard-btn {
@@ -2879,6 +3486,7 @@ form {
 
 	ul {
 		list-style-type: none;
+		margin: 0;
 
 		li {
 			color: white;
@@ -2897,6 +3505,15 @@ form {
 					position: relative;
 					font-size: 32px;
 					top: -4px;
+
+					@include tablet {
+						font-size: 24px;
+						top: -2px;
+					}
+
+					@include phone {
+						font-size: 20px;
+					}
 				}
 			}
 
@@ -3148,6 +3765,18 @@ footer {
 			font-weight: 900;
 			letter-spacing: .5px;
 
+			@include desktop {
+				font-size: 25px;
+			}
+
+			@include tablet {
+				font-size: 23px;
+			}
+
+			@include phone {
+				font-size: 18px;
+			}
+
 			span {
 				color: #62b136;
 			}
@@ -3157,6 +3786,11 @@ footer {
 	.social, .links {
 		width: 50%;
 		display: inline-block;
+
+		@include tablet {
+			width: 100%;
+			display: block;
+		}
 	}
 
 	.social {
@@ -3167,6 +3801,15 @@ footer {
 		background: #5dbdce;
 		padding-right: 15px;
 
+		@include tablet {
+			text-align: Center;
+		}
+
+		@include tiny {
+			line-height: 45px;
+			height: auto;
+		}
+
 		.stat {
 			display: inline-block;
 			padding: 0 15px;
@@ -3174,6 +3817,19 @@ footer {
 			font-size: 25px;
 			color: white;
 			font-weight: 600;
+
+			@include desktop {
+				font-size: 21px;
+			}
+
+			@include tablet {
+				font-size: 18px;
+			}
+
+			@include tiny {
+				line-height: 45px;
+				height: 45px;
+			}
 
 			i {
 				margin-right: 15px;
@@ -3196,15 +3852,50 @@ footer {
 			display: inline-block;
 			float: left;
 
+			@include desktop {
+				font-size: 21px;
+			}
+
+			@include tablet {
+				font-size: 18px;
+			}
+
+			@include tiny {
+				line-height: 45px;
+				height: 45px;
+			}
+
 			&.screening {
 				padding-left: 60px;
 				padding-right: 100px;
 				background: #f8c149;
+
+				@include desktop {
+					width: 50%;
+					padding: 0;
+					text-align: center;
+				}
+
+				@include tiny {
+					width: 100%;
+					display: block;
+				}
 			}
 
 			&.our-programs {
 				padding-left: 40px;
 				position: relative;
+
+				@include desktop {
+					width: 50%;
+					padding: 0;
+					text-align: center;
+				}
+
+				@include tiny {
+					width: 100%;
+					display: block;
+				}
 
 				&:after {
 					border-right: 45px solid #ed5851;
@@ -3215,6 +3906,10 @@ footer {
 					position: absolute;
 					left: -45px;
 					top: 0;
+
+					@include desktop {
+						display: none;
+					}
 				}
 			}
 		}
@@ -3227,11 +3922,23 @@ footer {
 		display: block;
 		clear: both;
 
+		@include tablet {
+			padding-bottom: 100px;
+		}
+
 		.text-left a {
 			font-size: 21px;
 			font-weight: 600;
 			line-height: 50px;
 			color: #004e5e;
+
+			@include tablet {
+				font-size: 18px;
+			}
+		}
+
+		ul {
+			margin: 0;
 		}
 
 		.text-right {
@@ -3244,8 +3951,16 @@ footer {
 						color: #004e5e;
 						display: block;
 						padding: 0 3px;
+
+						@include tablet {
+							font-size: 24px;
+						}
 					}
 				}
+			}
+
+			@include phone {
+				padding-top: 15px;
 			}
 		}
 
@@ -3257,6 +3972,10 @@ footer {
 				font-size: 12px;
 				padding: 0 15px;
 
+				@media screen and (max-width: 1024px) {
+					line-height: 25px;
+				}
+
 				span {
 					color: #303030;
 					font-weight: 600;
@@ -3267,6 +3986,12 @@ footer {
 					text-decoration: underline;
 					font-weight: 600;
 				}
+			}
+		}
+
+		.text-right, .text-left {
+			@include phone {
+				text-align: center;
 			}
 		}
 	}
