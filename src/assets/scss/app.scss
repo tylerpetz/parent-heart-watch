@@ -42,7 +42,7 @@
 // @include foundation-title-bar;
 // @include foundation-tooltip;
 // @include foundation-top-bar;
-// @include foundation-visibility-classes;
+@include foundation-visibility-classes;
 // @include foundation-float-classes;
 // @include foundation-flex-classes;
 
@@ -301,6 +301,10 @@ header {
 
 				@include tablet {
 					max-width: 310px;
+				}
+
+				@media screen and (max-width: 479px) {
+					max-width: 60px;
 				}
 			}
 
@@ -563,11 +567,34 @@ header {
 	padding: 50px 30px;
 	box-shadow: 0 0 25px 0 rgba(0,0,0,.5);
 
+	@include tablet {
+		width: 90%;
+	}
+
+	@include phone {
+		padding: 40px 15px 30px;
+	}
+
+	@include phone {
+		min-height: 0;
+		height: auto;
+		margin: 0 auto;
+	}
+
 	h1 {
 		font-size: 40px;
 		line-height: 48px;
 		color: #ed5851;
 		font-weight: bold;
+
+		@include tablet {
+			font-size: 30px;
+			line-height: 1.2;
+		}
+
+		@include phone {
+			font-size: 24px;
+		}
 	}
 
 	form {
@@ -587,23 +614,44 @@ header {
 			letter-spacing: 0;
 			font-family: 'Brandon';
 			margin-bottom: 25px;
+
+			@include tablet {
+				font-size: 24px;
+				line-height: 1.2;
+			}
+
+			@include phone {
+				font-size: 18px;
+			}
 		}
 
 		p {
 			font-size: 20px;
 			margin-bottom: 25px;
 			font-family: 'Caslon';
+
+			@include phone {
+				font-size: 17px;
+			}
 		}
 
 		.button {
 			background: #f8c149;
 			float: none;
+
+			@include tablet {
+				margin: 0;
+			}
 		}
 	}
 
 	.close-button {
 		color: #004e5e;
 		font-size: 3em;
+
+		@include phone {
+			font-size: 2em;
+		}
 	}
 }
 
@@ -631,6 +679,22 @@ header {
 				font-size: 150px;
 				width: 760px;
 				margin-bottom: 20px;
+
+				@include desktop {
+					width: 100%;
+					font-size: 80px;
+					margin-bottom: 10px;
+					line-height: 1.4;
+				}
+
+				@include tablet {
+					font-size: 64px;
+					margin-bottom: 0;
+				}
+
+				@include phone {
+					font-size: 28px;
+				}
 			}
 
 			h2 {
@@ -638,6 +702,20 @@ header {
 				text-shadow: 0 0 19px rgba(0,0,0,.25);
 				font-size: 100px;
 				width: 760px;
+
+				@include desktop {
+					width: 100%;
+					font-size: 70px;
+					margin-bottom: 0;
+				}
+
+				@include tablet {
+					font-size: 50px;
+				}
+
+				@include phone {
+					font-size: 22px;
+				}
 			}
 		}
 	}
@@ -757,6 +835,22 @@ header {
 					font-size: 122px;
 					font-weight: bold;
 
+					@include desktop {
+						width: 100%;
+						font-size: 80px;
+						margin-bottom: 10px;
+						line-height: 1.2;
+					}
+
+					@include tablet {
+						font-size: 64px;
+						margin-bottom: 0;
+					}
+
+					@include phone {
+						font-size: 42px;
+					}
+
 					span {
 						display: block;
 						font-size: 120px;
@@ -768,6 +862,21 @@ header {
 						margin: 10px auto 20px;
 						line-height: 80px;
 
+						@include desktop {
+							font-size: 80px;
+							margin-bottom: 10px;
+							line-height: 1;
+						}
+
+						@include tablet {
+							font-size: 64px;
+							margin: 0 auto;
+						}
+
+						@include phone {
+							font-size: 36px;
+						}
+
 						&:before {
 							content: '';
 							position: absolute;
@@ -776,6 +885,10 @@ header {
 							width: 60px;
 							height: 4px;
 							background: #fff;
+
+							@include tablet {
+								display: none;
+							}
 						}	
 
 						&:after {
@@ -786,6 +899,10 @@ header {
 							width: 60px;
 							height: 4px;
 							background: #fff;
+
+							@include tablet {
+								display: none;
+							}
 						}
 
 						&.no-marks {
@@ -922,6 +1039,21 @@ header {
 					width: 100%;
 					line-height: 100px;
 
+					@include desktop {
+						width: 100%;
+						font-size: 70px;
+						line-height: 1.1;
+					}
+
+					@include tablet {
+						font-size: 64px;
+						margin-bottom: 0;
+					}
+
+					@include phone {
+						font-size: 42px;
+					}
+
 					span {
 						display: block;
 						font-weight: normal;
@@ -930,6 +1062,10 @@ header {
 						position: relative;
 						margin: 0 auto;
 						color: #ed5851;
+
+						@include desktop {
+							width: 100%;
+						}
 					}
 				}  
 			}
@@ -1014,6 +1150,21 @@ header {
 					font-weight: bold;
 					width: 100%;
 					line-height: 140px;
+
+					@include desktop {
+						font-size: 80px;
+						line-height: 96px;
+					}
+
+					@include tablet {
+						font-size: 64px;
+						line-height: 72px;
+					}
+
+					@include phone {
+						font-size: 28px;
+						line-height: 1.3;
+					}
 
 					span {
 						display: block;
@@ -1158,6 +1309,22 @@ header {
 					width: 600px;
 					margin: 0 auto;
 					font-family: 'Archer';
+
+					@include desktop {
+						width: 100%;
+						font-size: 70px;
+						margin-bottom: 10px;
+						line-height: 1;
+					}
+
+					@include tablet {
+						font-size: 54px;
+						margin-bottom: 0;
+					}
+
+					@include phone {
+						font-size: 32px;
+					}
 				}
 
 				h2 {
@@ -1168,6 +1335,22 @@ header {
 					margin: 0 auto 50px;
 					font-family: 'Archer';
 					font-style: italic;
+
+					@include desktop {
+						width: 100%;
+						font-size: 50px;
+						margin-bottom: 20px;
+						line-height: 1;
+					}
+
+					@include tablet {
+						font-size: 34px;
+						margin-bottom: 0;
+					}
+
+					@include phone {
+						font-size: 28px;
+					}
 				}
 
 				.button {
@@ -1185,10 +1368,12 @@ header {
 						line-height: 1;
 						padding: 15px;
 						margin-top: 15px!important;
+						margin-bottom: 10px;
 					}
 
 					@include phone {
-						font-size: 18px;
+						font-size: 16px;
+						padding: 12px;
 					}
 
 					&:hover {
@@ -1205,6 +1390,16 @@ header {
 	font-size: 26px;
 	padding: 18px 20px 16px;
 	margin-bottom: 0;
+
+	@include tablet {
+		font-size: 20px;
+		padding: 13px 15px 14px;
+	}
+
+	@include phone {
+		font-size: 17px;
+		padding: 11px 13px 12px;
+	}
 }
 
 .centered-img {
@@ -1217,6 +1412,10 @@ header {
 
 	h2 {
 		color: #5dbdce;
+
+		@include tablet {
+			font-size: 30px;
+		}
 	}
 
 	.button {
@@ -1252,6 +1451,16 @@ header {
 		margin: 0 auto;
 		font-family: 'Caslon', serif;
 
+		@include desktop {
+			font-size: 20px;
+			line-height: 1.6;
+			padding: 0 10px;
+		}
+
+		@include tablet {
+			font-size: 16px;
+		}
+
 		strong {
 			color: white;
 			display: block;
@@ -1259,6 +1468,16 @@ header {
 			line-height: 43px;
 			font-weight: bold;
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+			@include desktop {
+				font-size: 19px;
+				line-height: 1.6;
+			}
+
+			@include tablet {
+				font-size: 17px;
+				margin-bottom: 5px;
+			}
 		}
 	}
 
@@ -1269,6 +1488,10 @@ header {
 		color: black;
 		font-weight: bold;
 		font-size: 20px;
+
+		@include tablet {
+			font-size: 17px;
+		}
 	}
 }
 
@@ -1285,6 +1508,10 @@ header {
 
 	h2 {
 		color: #a92c2c;
+
+		@include tablet {
+			margin-bottom: 15px;
+		}
 	}
 
 	p {
@@ -1302,11 +1529,27 @@ header {
 			font-weight: bold;
 			margin-bottom: 45px;
 
+			@include tablet {
+				font-size: 25px;
+			}
+
+			@include phone {
+				font-size: 19px;
+			}
+
 			strong {
 				font-size: 42px;
 				color: #62b136;
 				display:block;
 				margin-bottom: 10px;
+
+				@include tablet {
+					font-size: 35px;
+				}
+
+				@include phone {
+					font-size: 26px;
+				}
 			}
 		}
 	}
@@ -1320,6 +1563,14 @@ header {
 			line-height: 1;
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			font-weight: bold;
+
+			@include tablet {
+				font-size: 70px;
+			}
+
+			@include tiny {
+				font-size: 44px;
+			}
 		}
 
 		p {
@@ -1328,15 +1579,27 @@ header {
 			color: #5dbdce;
 			font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			font-weight: bold;
+
+			@include tablet {
+				font-size: 33px!important;
+				line-height: 34px!important;
+			}
+
+			@include phone {
+				font-size: 17px!important;
+				line-height: 21px!important;
+			}
 		}
-
-
 	}
 
 	hr {
 		max-width: 960px;	
 		margin: 72px auto;
 		border-bottom: 1px solid #bababe;
+
+		@include tablet {
+			margin-bottom: 20px!important;
+		}
 	}
 
 	.standard-btn {
@@ -1358,6 +1621,16 @@ header {
 			background-position: top center;
 			position: relative;
 
+			@include tablet {
+				height: 200px;
+			}
+
+			@include phone {
+				height: 200px;
+				width: 220px;
+				margin: 0 auto 40px;
+			}
+
 			.container {
 				display: table-cell;
 				vertical-align: middle;
@@ -1367,6 +1640,11 @@ header {
 				font-family: 'Caslon', serif;
 				text-shadow: 0 0 16px #000000;
 
+				@include tablet {
+					font-size: 18px;
+					line-height: 27px;
+				}
+
 				span {
 					display: block;
 					font-size: 66px;
@@ -1374,6 +1652,11 @@ header {
 					font-weight: bold;
 					font-family: "Brandon", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 					text-shadow: 0 0 19px #040404;
+
+					@include tablet {
+						font-size: 24px;
+						line-height: 25px;
+					}
 				}
 			}
 
@@ -1757,12 +2040,25 @@ header {
 		padding: 45px 0;
 		border-bottom: 1px solid #bababe;
 
+		@include tablet {
+			padding: 25px 0;
+		}
+
 		.date {
 			color: #000;
 			font-size: 30px;
 			font-weight: bold;
 			display: block;
 			line-height: 44px;
+
+			@include tablet {
+				font-size: 23px;
+				line-height: 1.8;
+			}
+
+			@include tablet {
+				font-size: 18px;
+			}
 		}
 
 		h2 {
@@ -1772,12 +2068,32 @@ header {
 			text-align: left;
 			margin: 0 0 5px;
 			color: #af2c23;
+
+			@include tablet {
+				font-size: 24px;
+				line-height: 1.4;
+			}
+
+			@include tablet {
+				font-size: 19px;
+			}
 		}
 
 		p {
 			font-size: 26px;
 			font-family: 'Caslon', serif;
 			line-height: 32px;
+
+			@include tablet {
+				font-size: 20px;
+				line-height: 1.4;
+				margin-bottom: 0!important;
+			}
+
+			@include phone {
+				font-size: 16px;
+				line-height: 1.4;
+			}
 
 			.read-story {
 				font-size: 19px;
@@ -1786,6 +2102,10 @@ header {
 				color: #5dbdce;
 				padding-left: 20px;
 				white-space: nowrap;
+
+				@include tablet {
+					font-size: 17px;
+				}
 			}
 		}
 	}
@@ -1814,11 +2134,20 @@ header {
 	}
 
 	ul {
+
+		@include tablet {
+			margin-left: 5px;
+		}
 		li {
 			list-style-type: none;
 			font-size: 22px;
 			line-height: 36px;
 			font-family: 'Caslon', serif;
+
+			@include tablet {
+				font-size: 18px;
+				padding: 0;
+			}
 		}
 	}
 
@@ -1851,17 +2180,37 @@ header {
 			margin-bottom: 0;
 		}
 	}
+
+	hr {
+		@include tablet {
+			margin-bottom: 20px!important;
+		}
+	}
 }
 
 form {
 	p {
-		margin-bottom: 5px;;
+		margin-bottom: 5px;
+
+		@include tablet {
+			line-height: 1.6!important;
+			margin-bottom: 5px!important;
+		}
+
+		@include tablet {
+			line-height: 1.6!important;
+			margin-bottom: 10px!important;
+		}
 	}
 
 	.input-wrap {
 		padding: 4px 6px;
 		background: #ececed;
 		margin-bottom: 18px;
+
+		@include desktop {
+			margin-bottom: 12px;
+		}
 	}
 
 	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
@@ -1871,10 +2220,22 @@ form {
 		&:focus {
 			border: 2px solid #babcbe;
 		}
+
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include desktop {
+			font-size: 16px;
+		}
 	}
 
 	input {
 		padding-top: 12px!important;
+
+		@include desktop {
+			padding-top: .5rem!important;
+		}
 	}
 
 	textarea {
@@ -1887,6 +2248,13 @@ form {
 		font-size: 23px;
 		letter-spacing: 1px;
 		text-transform: uppercase;
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include phone {
+			font-size: 16px;
+		}
 	}
 
 	:-moz-placeholder {
@@ -1895,6 +2263,13 @@ form {
 		font-size: 23px;
 		letter-spacing: 1px;
 		text-transform: uppercase;  
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include phone {
+			font-size: 16px;
+		}
 	}
 
 	::-moz-placeholder {
@@ -1903,6 +2278,13 @@ form {
 		font-size: 23px;
 		letter-spacing: 1px;
 		text-transform: uppercase;  
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include phone {
+			font-size: 16px;
+		}
 	}
 
 	:-ms-input-placeholder {  
@@ -1911,6 +2293,13 @@ form {
 		font-size: 23px;
 		letter-spacing: 1px;
 		text-transform: uppercase;  
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include phone {
+			font-size: 16px;
+		}
 	}
 
 	.button {
@@ -1920,6 +2309,19 @@ form {
 		background: #5dbdce;
 		letter-spacing: .5px;
 		margin: 0;
+
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include tablet {
+			font-size: 16px;
+		}
+
+		@include phone {
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -1978,6 +2380,25 @@ form {
 			line-height: 60px;
 			top: 0;
 			display: block;		
+
+			@include tablet {
+				font-size: 22px;
+				height: 46px;
+				line-height: 46px;
+			}
+
+			@include phone {
+				font-size: 18px;
+				height: 38px;
+				line-height: 38px;
+			}
+
+			@include tiny {
+				position: relative;
+				display: block;
+				left: 0%;
+				color: white;
+			}
 		}
 
 
@@ -2076,6 +2497,10 @@ form {
 		box-shadow: 0 2px 15px 0 rgba(0,0,0,.25);
 		background: white;
 
+		@include phone {
+			margin-bottom: 15px;
+		}
+
 		.top {
 			color: white;
 			font-weight: bold;
@@ -2084,6 +2509,18 @@ form {
 			font-weight: bold;
 			height: 75px;
 			line-height: 75px;
+
+			@include tablet {
+				font-size: 25px;
+				line-height: 55px;
+				height: 55px;
+			}
+
+			@include tablet {
+				font-size: 22px;
+				line-height: 45px;
+				height: 45px;
+			}
 
 			&.green {
 				background: #62ab3c;
@@ -2100,6 +2537,10 @@ form {
 			&.no-padding {
 				padding-top: 50px;
 			}
+
+			@include tablet {
+				padding: 20px 10px 30px!important;
+			}
 		}
 
 		p {
@@ -2111,6 +2552,15 @@ form {
 			font-weight: 600;
 			max-width: 440px;
 			margin: 0 auto;
+
+			@include tablet {
+				font-size: 22px!important;
+				line-height: 1.6;
+			}
+
+			@include phone {
+				font-size: 17px!important;
+			}
 		}
 
 		button.pointed {
@@ -2124,6 +2574,16 @@ form {
 			position: relative;
 			margin: 0 auto;
 			border: 0;
+
+			@include tablet {
+				font-size: 20px;
+				padding: 0 15px;
+			}
+
+			@include phone {
+				font-size: 18px;
+				padding: 0 13px;
+			}
 
 			&::after {
 				border-left: 29px solid #af2c23;
@@ -2190,6 +2650,10 @@ form {
 	hr {
 		max-width: 950px;
 		margin: 50px auto;
+
+		@include phone {
+			margin-bottom: 20px!important;
+		}
 	}
 
 	.no-margin {
@@ -2660,6 +3124,10 @@ form {
 			color: #303030;
 			background: #62b136;
 		}
+
+		@include tablet {
+			margin-bottom: 30px;
+		}
 	}
 }
 
@@ -2835,6 +3303,12 @@ form {
 		padding-bottom: 50px;
 		padding-top:  60px;
 
+		@include tablet {
+			border: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
 		.fancy-title {
 			position: absolute;
 			top: -33px;
@@ -2845,6 +3319,10 @@ form {
 			background: #af2c23;
 			width: 740px;
 			font-size: 42px;
+
+			@include tablet {
+				width: 90%;
+			}
 
 			&:before{
 				border-right-color: #af2c23;
@@ -2864,8 +3342,19 @@ form {
 			padding-right: 80px;
 			list-style-type: dot;
 
+			@include tablet {
+				padding-left: 30px;
+				padding-right: 30px;
+				padding: 0;
+			}
+
 			li {
 				font-size: 30px;
+
+				@include tablet {
+					font-size: 20px;
+					padding: 0;
+				}
 			}
 		}
 	}
@@ -2881,7 +3370,7 @@ form {
 	h2.large {
 		font-size: 55px;
 		color: #ed5851;
-		line-height: 67px;
+		line-height: 1.4;
 	}
 }
 
@@ -2899,6 +3388,16 @@ form {
 		font-weight: bold;
 		margin-bottom: 10px;
 
+
+		@include tablet {
+			font-size: 24px;
+			line-height: 1.3;
+		}
+
+		@include phone {
+			font-size: 20px;
+		}
+
 		&.orange {
 			color: #f8c149;
 			margin-bottom: 40px;
@@ -2914,14 +3413,36 @@ form {
 		margin: 0 auto;
 		background-repeat: no-repeat;
 
+		@include desktop {
+			min-height: 640px;
+		}
+
+		@include tablet {
+			background-image: none;
+		}
+
 		p {
 			margin-top: 30px;
 			margin-bottom: 40px;
+		}
+
+		.columns {
+			@include tablet {
+				width: 50%;
+			}
+
+			@include phone {
+				width: 100%;
+			}
 		}
 	}
 
 	.accordion {
 		background: transparent;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
 
 		.accordion-title {
 			font-size: 22px;
@@ -2933,6 +3454,11 @@ form {
 			padding-left: 0;
 			padding-right: 0;
 			background-color: transparent;
+
+			@include desktop {
+				font-size: 18px;
+				padding: 1rem 0;
+			}
 
 			&:hover {
 				background-color: transparent;
@@ -2957,6 +3483,13 @@ form {
 				font-size: 21px;
 				line-height: 24px;
 				margin-bottom: 15px;
+
+				@include desktop {
+					font-size: 18px;
+					line-height: 1.2;
+					margin-top: 10px;
+
+				}
 			}
 		}
 	}
@@ -2964,6 +3497,10 @@ form {
 	hr {
 		max-width: 950px;
 		margin: 0px auto 80px;
+
+		@include tablet {
+			margin-bottom: 20px!important;
+		}
 	}
 
 	form {
@@ -2989,12 +3526,23 @@ form {
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+
+			@include phone {
+				width: 100%;
+				height: 250px;
+				background-position: center bottom;
+			}
 		}
 
 		&.text {
 			width: 67%;
 			background: #f1766f;
 			padding: 55px 40px;
+
+			@include phone {
+				width: 100%;
+				padding: 25px 20px;
+			}
 
 			.block {
 				max-width: 900px;
@@ -3013,6 +3561,10 @@ form {
 					line-height: 40px;
 					font-weight: 600;
 					margin-bottom: 15px;
+
+					@include tablet {
+						line-height: 1.5;
+					}
 				}
 
 				p {
@@ -3042,6 +3594,10 @@ form {
 		line-height: 42px;
 		text-transform: uppercase;
 		margin-bottom: 30px;
+
+		@include phone {
+			font-size: 22px!important;
+		}
 	}
 
 	.btn-group {
@@ -3056,6 +3612,11 @@ form {
 			border-width: 0;
 			color: white;
 			text-transform: uppercase;
+
+			@include phone {
+				margin: 0 auto 20px;
+				display: block;
+			}
 
 			&.lightblue {
 				background: #5dbdce;
@@ -3115,6 +3676,10 @@ form {
 	hr {
 		max-width: 950px;
 		margin: 30px auto 50px;
+
+		@include tablet {
+			margin-bottom: 20px!important;
+		}
 	}
 
 	.membership-benefits {
@@ -3128,6 +3693,16 @@ form {
 		padding-left: 80px;
 		padding-right: 80px;
 
+		@include desktop {
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-top: 40px;
+		}
+
+		@include tablet {
+			border: none;
+		}
+
 		.fancy-title {
 			position: absolute;
 			top: -33px;
@@ -3139,6 +3714,11 @@ form {
 			background: #af2c23;
 			width: 560px;
 			font-size: 37px;
+
+			@include desktop {
+				width: 450px;
+				font-size: 26px;
+			}
 
 			&:before{
 				border-right-color: #af2c23;
@@ -3152,6 +3732,10 @@ form {
 		.column {
 			padding-left: 8px;
 			padding-right: 8px;
+
+			@include phone {
+				margin-bottom: 20px;
+			}
 		}
 
 		.shadow {
@@ -3159,6 +3743,12 @@ form {
 			display: block;
 			width: 100%;
 			height: 100%;
+
+			@include phone {
+				display: inline-block;
+				float: none;
+				width: auto;
+			}
 
 			&:after {
 				content: '';
@@ -3171,6 +3761,10 @@ form {
 				left: 0;
 				right: 0;
 				opacity: .6;
+
+				@include phone {
+					height: 12px;
+				}
 			}
 		}
 
@@ -3189,6 +3783,11 @@ form {
 			h4 {
 				width: 420px;
 				font-size: 30px;
+
+				@include desktop {
+					width: 350px;
+					font-size: 24px;
+				}
 
 				&.lightblue {
 					background: #5dbdce;
@@ -3244,6 +3843,11 @@ form {
 			margin-bottom: 50px;
 			font-size: 23px;
 
+			@include phone {
+				font-size: 17px;
+				padding: 11px 13px 12px;
+			}
+
 			&:hover {
 				background: #d27505;
 			}
@@ -3266,6 +3870,15 @@ form {
 		background: white;
 		color: #303030;
 
+		@include tablet {
+			margin: 25px 5px;
+		}
+
+		@include phone {
+			display: block;
+			margin: 25px auto 0;
+		}
+
 		&:hover {
 			color: #303030;
 			background-color: #d27505;
@@ -3282,6 +3895,12 @@ form {
 
 	ul {
 		margin-bottom: 50px;
+		margin-left: 0;
+
+		@include tablet {
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
 
 		li {
 			display: block;
@@ -3291,6 +3910,11 @@ form {
 				font-size: 25px;
 				line-height: 39px;
 				color: #5dbdce;
+
+				@include tablet {
+					font-size: 18px;
+					line-height: 27px;
+				}
 
 				&:hover {
 					text-decoration: underline;
@@ -3543,12 +4167,48 @@ form {
 		line-height: 62px;
 		text-align: right;
 
+		@include desktop {
+			font-size: 26px;
+			line-height: 50px;
+		}
+
+		@media screen and (max-width: 800px) {
+			text-align: center;
+			line-height: 1.4;
+		}
+
+		@include tablet {
+			font-size: 20px;
+		}
 	}
 
 	.standard-btn {
 		float: left;
 		margin-right: 35px;
 		margin-left: 10px;
+
+		@include desktop {
+			font-size: 22px;
+			padding: 15px 15px 16px;
+			margin-right: 10px;
+		} 
+
+		@media screen and (max-width: 800px) {
+			float: none;
+		}
+
+		@include tablet {
+			font-size: 18px;
+			padding: 15px 15px 16px;
+			margin-right: 10px;
+		} 
+	}
+
+	.small-12.medium-6.columns {
+		@media screen and (max-width: 800px) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	hr {
@@ -3561,8 +4221,16 @@ form {
 		margin-top: 50px;
 		display: block;
 
+		@include phone {
+			margin-top: 20px;
+		}
+
 		&:last-of-type {
 			margin-bottom: 80px;
+
+			@include phone {
+				margin-bottom: 40px;
+			}
 		}
 
 		h2 {
@@ -3572,6 +4240,18 @@ form {
 			margin-bottom: 15px;
 			text-align: left;
 			font-weight: bold;
+
+			@include desktop {
+				font-size: 45px;
+			}
+
+			@include tablet {
+				font-size: 36px;
+			}
+
+			@include phone {
+				font-size: 25px;
+			}
 
 			&.purple {
 				color: #922280;
@@ -3586,23 +4266,80 @@ form {
 			margin-bottom: 5px;
 			display: inline-block;
 			max-width: 450px;
+
+			@include desktop {
+				font-size: 38px;
+			}
+
+			@include tablet {
+				font-size: 30px;
+			}
+
+			@include phone {
+				font-size: 20px;
+			}
 		}
 
 		p {
 			font-size: 27px;
 			line-height: 39px;
+
+			@include desktop {
+				line-height: 1.5;
+			}
+
+			@include tablet {
+				
+			}
+
+			@include phone {
+				
+			}
 		}
 
 		.img-left {
 			float: left;
 			margin-right: 25px;
 			margin-bottom: 30px;
+
+			@include desktop {
+				max-width: 400px;
+			}
+
+			@include tablet {
+				max-width: 300px;
+			}
+
+			@include phone {
+				display: block;
+				margin: 0 0 20px;
+				float: none;
+				max-width: 100%;
+			}
 		}
 
 		.img-right {
 			float: right;
 			margin-left: 25px;
 			margin-bottom: 30px;
+
+			@include desktop {
+				max-width: 400px;
+			}
+
+			@include tablet {
+				max-width: 300px;
+				float: left;
+				margin-right: 25px;
+				margin-left: 0;
+			}
+
+			@include phone {
+				display: block;
+				margin: 0 0 20px;
+				float: none;
+				max-width: 100%;
+			}
 		}
 	}
 
@@ -3610,8 +4347,17 @@ form {
 		margin-top: 70px;
 		margin-bottom: 70px;
 
+		@include tablet {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
 		h4 {
 			width: 740px;
+
+			@include tablet {
+				height: auto;
+			}
 		}
 
 		&.darkblue {
@@ -3637,13 +4383,33 @@ form {
 	}
 
 	.photo-grid {
+
+		@include tablet {
+			margin-top: 20px;
+		}
+
 		.column {
+
+			@include tiny {
+				width: 100%;
+			}
+
 			.photo {
 				-webkit-filter: none;
 				filter: none;
 				padding-bottom: 70px;
 				background-size: 100% auto;
 				background-position: center top;
+
+				@include desktop {
+					height: 220px;
+				}
+
+				@include tablet {
+					height: 150px;
+					background-size: cover;
+					margin-bottom: 70px;
+				}
 
 				p {
 					color: white;
@@ -3664,12 +4430,34 @@ form {
 						&.small {
 							font-size: 18px;
 						}
+
+						@include desktop {
+							font-size: 15px!important;
+						}
+					}
+
+					@include desktop {
+						font-size: 15px!important;
+						line-height: 1.3!important;
+					}
+
+					@include tablet {
+						top: 100%;
+						display: block;
+						padding: 0;
+						background: none;
+						color: black;
+						padding-top: 10px;
 					}
 				}
 
 				&:hover p {
 					opacity: 1;
 					background-color: #5dbdce;
+
+					@include tablet {
+						background-color: transparent;
+					}
 				}
 			}
 		}
@@ -3684,6 +4472,18 @@ form {
 				background-size: 100% auto;
 				background-position: center top;
 
+				@include desktop {
+					height: 250px;
+					background-size: cover;
+					background-position: center;
+				}
+
+				@include tablet {
+					height: 180px;
+					background-size: cover;
+					margin-bottom: 70px;
+				}
+
 				p {
 					background-color: #af2c23;
 
@@ -3691,6 +4491,25 @@ form {
 						color: white;
 						margin-bottom: 0;
 						margin-top: 5px;
+
+						@include desktop {
+							font-size: 15px!important;
+							color: black;
+						}
+					}
+
+					@include desktop {
+						font-size: 15px!important;
+						line-height: 1.3!important;
+					}
+
+					@include tablet {
+						top: 100%;
+						display: block;
+						padding: 0;
+						background: none;
+						color: black;
+						padding-top: 10px;
 					}
 				}
 
@@ -3703,6 +4522,10 @@ form {
 					background-color: #af2c23;
 					z-index: 10;
 					transition: all 400ms ease;
+
+					@include tablet {
+						display: none!important;
+					}
 					
 
 					p {
@@ -3737,6 +4560,10 @@ form {
 
 					p {
 						background-color: #af2c23;
+
+						@include tablet {
+							background-color: transparent;
+						}
 					}
 
 					.drawer {
